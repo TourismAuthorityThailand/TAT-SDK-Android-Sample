@@ -1,6 +1,6 @@
-# TAT-SDK-Android-Sample
+# TAT Android SDK Sample
 
-One Paragraph of project description goes here
+Java versions
 
 ## Getting Started
 
@@ -82,6 +82,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+**Glide
+*https://github.com/bumptech/glide
+
