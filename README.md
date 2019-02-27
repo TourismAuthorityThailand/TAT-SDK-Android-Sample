@@ -11,15 +11,16 @@ You can get **API Key** from [TAT Developer Guide and Console](https://developer
 use Gradle:
 
 ```gradle
+// In Project's build.gradle
 repositories {
     google()
     jcenter()
-    mavenCentral()
     maven {
         url 'https://dl.bintray.com/nostratat/maven'
     }
 }
 
+// In Module's build.gradle
 dependencies {
     implementation 'org.th.tatsdk:tatsdk:0.0.6'
 }
@@ -29,7 +30,8 @@ dependencies {
 Setup API Key for initial environment in application like this:
 
 ```java
-// Setup API Key in startup class that extend Application.
+// Create BaseApplication class that extend Application,
+// then setup API Key in this class.
 @Override
 public void onCreate() {
     super.onCreate();

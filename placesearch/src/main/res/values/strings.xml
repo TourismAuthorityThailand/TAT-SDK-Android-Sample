@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TATSdkSample</string>
+    <string name="search_hint">Type here to search</string>
+    <string name="btn_search_place">Search</string>
+    <string name="ckb_attraction">Attraction</string>
+    <string name="ckb_accommodation">Accommodation</string>
+    <string name="ckb_restaurant">Restaurant</string>
+    <string name="ckb_shop">Shopping</string>
+    <string name="ckb_other">Other</string>
+    <string name="search_title">Search Result</string>
+    <string name="switch_current_location">Nearby location</string>
+    <string name="result_title">Search Result</string>
+    <string name="detail_title">Place Detail</string>
+    <string name="main_title">Place Search</string>
+    <string name="not_result_found">Not result found</string>
+</resources>
