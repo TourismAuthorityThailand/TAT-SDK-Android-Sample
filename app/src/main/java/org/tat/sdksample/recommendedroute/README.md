@@ -4,8 +4,8 @@ This sample demonstrates how to use `TATGetRoutes` to search routes from `TATGet
 
 ## Route Search parameters
  * **numberOfDays / setNumberOfDays method**
- * **latitude and longitude / setLatitude or setLongitude method** value *when you want to search places around you.*
- * **point / setPoint method** *when you want to search places around you by using `TATPoint`.*
+ * **latitude and longitude / setLatitude or setLongitude method** value *when you want to search routes around you.*
+ * **point / setPoint method** *when you want to search routes around you by using `TATPoint`.*
  * **region / setRegion method** *when you want to search route in specific region by using `TATRegion`.*
  * **setLanguage method** *use `TATLanguage.ENGLISH` for English display or `TATLanguage.THAI` for Thai display.*
 
