@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.th.tatsdk:tatsdk:1.0.0'
+    implementation 'org.th.tatsdk:tatsdk:1.0.1'
 }
 ```
 ## How do I use TAT-SDK-Android ?
