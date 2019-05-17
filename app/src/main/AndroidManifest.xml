@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.tat.sdksample">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:usesCleartextTraffic="true"
+        android:name=".Application"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".placesearch.search.MainSearchActivity" />
+        <activity
+            android:name=".placesearch.search.SearchResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".placesearch.detail.DetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".event.eventdetail.EventDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".news.newslist.NewsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".news.detail.NewsDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".event.eventlist.MainEventActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".recommendedroute.search.RecommendedRouteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".recommendedroute.list.RecommendedRouteListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".recommendedroute.detail.RouteDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".recommendedroute.map.MapActivity"
+            android:label="@string/map_title"
+            android:screenOrientation="portrait" />
+        <activity android:name=".main.MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

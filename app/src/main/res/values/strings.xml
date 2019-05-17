@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">TATSdkSample</string>
+    <string name="main_title">TAT SDK Sample</string>
+    <string name="search_hint">Type here to search</string>
+    <string name="btn_search_place">Search</string>
+    <string name="ckb_attraction">Attraction</string>
+    <string name="ckb_accommodation">Accommodation</string>
+    <string name="ckb_restaurant">Restaurant</string>
+    <string name="ckb_shop">Shopping</string>
+    <string name="ckb_other">Other</string>
+    <string name="search_title">Search Result</string>
+    <string name="switch_current_location">Nearby location</string>
+    <string name="result_title">Search Result</string>
+    <string name="detail_title">Place Detail</string>
+    <string name="search_main_title">Place Search</string>
+    <string name="not_result_found">Not result found</string>
+
+    <string name="event_and_festival">Events and Festivals</string>
+    <string name="event_detail">Event detail</string>
+    <string name="sortby_placeholder" translatable="false">SortBy :</string>
+    <string name="news">News</string>
+    <string name="new_detail">News Detail</string>
+    <string name="region">Region</string>
+    <string name="day">Day</string>
+    <string name="unknown">Unknown</string>
+    <string name="recommended_routes">Recommended Routes</string>
+
+    <string-array name="day">
+        <item>Unknown</item>
+        <item>1 Day</item>
+        <item>2 Days</item>
+        <item>3 Days</item>
+        <item>4 Days</item>
+        <item>5 Days</item>
+        <item>6 Days</item>
+        <item>7 Days</item>
+        <item>8 Days</item>
+        <item>9 Days</item>
+        <item>10 Days</item>
+        <item>11 Days</item>
+        <item>12 Days</item>
+    </string-array>
+
+    <string-array name="region">
+        <item>All</item>
+        <item>Northern</item>
+        <item>Northeastern</item>
+        <item>Western</item>
+        <item>Central</item>
+        <item>Eastern</item>
+        <item>Southern</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="go_to_map">View on map</string>
+    <string name="route_detail_title">Route Detail</string>
+    <string name="by_date">By date</string>
+    <string name="by_distance">By distance</string>
+    <string name="sort">Sort</string>
+    <string name="map_title"> Route Map</string>
+</resources>
