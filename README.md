@@ -39,7 +39,7 @@ public void onCreate() {
 }
 ```
 
- * SDK Reference: [TAT-SDK-Android Reference](https://tatapi.tourismthailand.org/tatsdk/References/android/)
+ * SDK Reference: [TAT-SDK-Android Reference](https://tatapi.tourismthailand.org/tatsdk/References/android/latest/)
 
 ## Samples
 1. [Place Search](/app/src/main/java/org/tat/sdksample/placesearch/README.md)
