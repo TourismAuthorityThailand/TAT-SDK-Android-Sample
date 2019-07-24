@@ -2,7 +2,7 @@ package org.tat.sdksample.event.eventlist
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ import org.tat.sdksample.R
 import org.tat.sdksample.event.eventdetail.EventDetailActivity
 import org.th.tatsdk.event.TATEventInfo
 
-class EventAdapter(private val results: Array<TATEventInfo>) : RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
+class EventAdapter(private val results: Array<TATEventInfo>) : androidx.recyclerview.widget.RecyclerView.Adapter<EventAdapter.EventViewHolder>() {
     private var context: Context? = null
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): EventViewHolder {
@@ -68,7 +68,7 @@ class EventAdapter(private val results: Array<TATEventInfo>) : RecyclerView.Adap
         }
     }
 
-    inner class EventViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
+    inner class EventViewHolder(var view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         var image: ImageView
         var name: TextView
         var time: TextView

@@ -2,10 +2,10 @@ package org.tat.sdksample.placesearch.search
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.AppCompatCheckBox
-import android.support.v7.widget.SearchView
-import android.support.v7.widget.SwitchCompat
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatCheckBox
+import androidx.appcompat.widget.SearchView
+import androidx.appcompat.widget.SwitchCompat
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
@@ -108,7 +108,6 @@ class MainSearchActivity : AppCompatActivity() {
         // set radius 10 kilometers
         param.searchRadius = 10
 
-
         //set search center location
         if (switchLocation!!.isChecked) {
             param.geolocation = TATGeolocation(13.74918, 100.55785)
@@ -126,10 +125,10 @@ class MainSearchActivity : AppCompatActivity() {
                                 item.id,
                                 item.name,
                                 SearchResult.sortAddress(
-                                        location.address,
-                                        location.subDistrict,
-                                        location.district,
-                                        location.province),
+                                        location?.address,
+                                        location?.subDistrict,
+                                        location?.district,
+                                        location?.province),
                                 SearchResult.distanceToUnit(item.distance),
                                 item.categoryName,
                                 item.thumbnailUrl))

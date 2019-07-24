@@ -1,4 +1,4 @@
-# Place search and Get Place's detail <a name="PlaceSearch"></a>
+# Place search and Get Place's detail 
 This sample demonstrates how to search and get the place detail from TAT SDK.
 
 # Place search
@@ -22,10 +22,10 @@ How to use `TATPlaces` to search places used `TATPlacesSearchParameter` specific
  5. When you clicked a result that show the detail of place by category.
 
 ### Place search
-<img src="PlaceSearch_android.png" width="30%">
+![](PlaceSearch_android.png)
 
 ### Search result
-<img src="SearchResult_android.png" width="30%">
+![](SearchResult_android.png)
 
 # Get Place's detail
 How to use `TATPlaces` to get place's detail from `TATGetPlaceDetailParameter` and use the category of place to choose the get detail method, such as: `getAttraction`, `getAccommodation`, `getRestaurant`, `getShop` and `getOtherPlace` method with place id from search result.
@@ -39,4 +39,5 @@ How to use `TATPlaces` to get place's detail from `TATGetPlaceDetailParameter` a
  2. Show the result of the selected place.
 
 ### Place's detail
-<img src="PlaceDetail_android.png" width="30%">
+![](PlaceDetail_android.png)
+

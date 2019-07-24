@@ -1,8 +1,8 @@
 package org.tat.sdksample.placesearch.search
 
-import android.support.v7.widget.AppCompatImageView
-import android.support.v7.widget.AppCompatTextView
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +12,7 @@ import org.tat.sdksample.placesearch.inteface.SearchResultClickListener
 import org.tat.sdksample.placesearch.model.SearchResult
 import org.tat.sdksample.placesearch.model.SearchResults
 
-class SearchResultAdapter(listener: SearchResultClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class SearchResultAdapter(listener: SearchResultClickListener) : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
 
     private var listItem: List<SearchResult>? = null
     private var listener: SearchResultClickListener? = null
@@ -31,7 +31,7 @@ class SearchResultAdapter(listener: SearchResultClickListener) : RecyclerView.Ad
         notifyDataSetChanged()
     }
 
-    override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
         if (viewHolder is ViewHolder) {
             val item = listItem!![position]
             viewHolder.tvName.text = item.placeName
@@ -58,7 +58,7 @@ class SearchResultAdapter(listener: SearchResultClickListener) : RecyclerView.Ad
         }
     }
 
-    class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+    class ViewHolder(v: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(v) {
 
         internal var tvName: AppCompatTextView
         internal var tvAddress: AppCompatTextView

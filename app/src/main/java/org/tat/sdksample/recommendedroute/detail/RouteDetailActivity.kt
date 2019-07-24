@@ -1,8 +1,8 @@
 package org.tat.sdksample.recommendedroute.detail
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
@@ -15,7 +15,7 @@ import org.th.tatsdk.route.TATRecommendedRoutes
 
 class RouteDetailActivity : AppCompatActivity() {
 
-    private lateinit var rcv: RecyclerView
+    private lateinit var rcv: androidx.recyclerview.widget.RecyclerView
     private var routeId = ""
     private lateinit var adapter: RouteDetailAdapter
     private lateinit var noResultText: TextView

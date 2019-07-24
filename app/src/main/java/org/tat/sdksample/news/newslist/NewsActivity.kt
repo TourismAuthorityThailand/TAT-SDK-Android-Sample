@@ -1,8 +1,8 @@
 package org.tat.sdksample.news.newslist
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.RecyclerView
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
@@ -17,7 +17,7 @@ import org.th.tatsdk.news.TATNews
 
 class NewsActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: androidx.recyclerview.widget.RecyclerView
     private lateinit var tvNoResult: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-# Find Recommended Routes and Get Route's detail <a name="RecommendedRoute"></a>
+# Find Recommended Routes and Get Route's detail 
 
 This sample demonstrates how to use `TATRecommendedRoutes` to find the recommended routes from `TATFindRoutesParameter` and get the route's detail from `TATGetRouteDetailParameter`.
 
@@ -18,10 +18,10 @@ How to use `TATRecommendedRoutes` to find the recommended routes by `find` metho
  5. When you clicked a result that show the detail of route.
 
 ### Find Recommended Routes
-<img src="RecommendedRouteSearch_Android.png" width="30%">
+![](RecommendedRouteSearch_Android.png)
 
 ### Recommended Routes Result
-<img src="RecommendedRouteList_Android.png" width="30%">
+![](RecommendedRouteList_Android.png)
 
 # Get Route's detail
 How to use `TATRecommendedRoutes` to get the route's detail by `getDetail` method.
@@ -36,7 +36,7 @@ How to use `TATRecommendedRoutes` to get the route's detail by `getDetail` metho
  3. When you click view on map will display route path on map.
 
 ### Get Route's detail
-<img src="RecommendedRouteDetail_Android.png" width="30%">
+![](RecommendedRouteDetail_Android.png)
 
 ### Route on Map
-<img src="RecommendedRouteMap_Android.png" width="30%">
+![](RecommendedRouteMap_Android.png)

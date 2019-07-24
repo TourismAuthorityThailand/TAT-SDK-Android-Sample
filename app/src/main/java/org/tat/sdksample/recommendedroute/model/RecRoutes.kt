@@ -18,7 +18,7 @@ data class RecRoutes(var recRoutes: List<RecRoute>? = null) : Parcelable {
                     item.introduction,
                     item.thumbnailUrl,
                     distanceToUnit(item.distance),
-                    item.numberOfDays
+                    item.numberOfDays?:0
             ))
         }
         this.recRoutes = list

@@ -1,9 +1,9 @@
 package org.tat.sdksample.recommendedroute.list
 
 import android.content.Intent
-import android.support.v7.widget.AppCompatImageView
-import android.support.v7.widget.AppCompatTextView
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ import org.tat.sdksample.recommendedroute.detail.RouteDetailActivity
 import org.tat.sdksample.recommendedroute.model.RecRoute
 import org.tat.sdksample.recommendedroute.model.RecRoutes
 
-class RecommendedRouteListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class RecommendedRouteListAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
 
     private var listItem: List<RecRoute>? = null
 
@@ -22,12 +22,12 @@ class RecommendedRouteListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
         val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_result, viewGroup, false)
         return RecommendedRouteListAdapter.ViewHolder(view)
     }
 
-    override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
         if (viewHolder is ViewHolder) {
             val item = listItem!![position]
             viewHolder.tvName.text = item.routeName
@@ -54,7 +54,7 @@ class RecommendedRouteListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder
         return listItem!!.size
     }
 
-    class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+    class ViewHolder(v: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(v) {
 
         internal var tvName: AppCompatTextView
         internal var tvInfo: AppCompatTextView

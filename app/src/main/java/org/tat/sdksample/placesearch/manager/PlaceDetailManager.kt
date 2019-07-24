@@ -24,25 +24,25 @@ class PlaceDetailManager(listener: DetailLoadingListener) {
             "Attraction" -> TATPlaces.getAttractionAsync(param, object : ServiceRequestListener<TATGetAttractionDetailResult> {
                 override fun onResponse(result: TATGetAttractionDetailResult?) {
                     result?.let {
-                    val location = result.location
-                    val detail = Detail(result.name,
-                            Detail.sortAddress(location.address, location.subDistrict, location.district, location.province),
-                            result.information.detail,
-                            checkTelephone(result.contact),
-                            checkUrl(result.contact),
-                            sortList(result.facilities),
-                            sortList(result.services),
-                            sortList(result.paymentMethods)
-                    )
-                    if (listener != null) {
-                        listener!!.onSucceed(detail)
-                    }
+                        val location = result.location
+                        val detail = Detail(result.name,
+                                Detail.sortAddress(location?.address, location?.subDistrict, location?.district, location?.province),
+                                result.information?.detail ?: "",
+                                checkTelephone(result.contact),
+                                checkUrl(result.contact),
+                                sortList(result.facilities),
+                                sortList(result.services),
+                                sortList(result.paymentMethods)
+                        )
+                        if (listener != null) {
+                            listener!!.onSucceed(detail)
+                        }
                     }
                 }
 
                 override fun onError(message: String?, errorCode: Int) {
                     if (listener != null) {
-                        listener!!.onError(message?:"", errorCode)
+                        listener!!.onError(message ?: "", errorCode)
                     }
                 }
             })
@@ -51,8 +51,8 @@ class PlaceDetailManager(listener: DetailLoadingListener) {
                     result?.let {
                         val location = result.location
                         val detail = Detail(result.name,
-                                Detail.sortAddress(location.address, location.subDistrict, location.district, location.province),
-                                result.information.detail,
+                                Detail.sortAddress(location?.address, location?.subDistrict, location?.district, location?.province),
+                                result.information?.detail ?: "",
                                 checkTelephone(result.contact),
                                 checkUrl(result.contact),
                                 sortList(result.facilities),
@@ -76,8 +76,8 @@ class PlaceDetailManager(listener: DetailLoadingListener) {
                     result?.let {
                         val location = result.location
                         val detail = Detail(result.name,
-                                Detail.sortAddress(location.address, location.subDistrict, location.district, location.province),
-                                result.information.detail,
+                                Detail.sortAddress(location?.address, location?.subDistrict, location?.district, location?.province),
+                                result.information?.detail ?: "",
                                 checkTelephone(result.contact),
                                 checkUrl(result.contact),
                                 sortList(result.facilities),
@@ -102,8 +102,8 @@ class PlaceDetailManager(listener: DetailLoadingListener) {
                     result?.let {
                         val location = result.location
                         val detail = Detail(result.name,
-                                Detail.sortAddress(location.address, location.subDistrict, location.district, location.province),
-                                result.information.detail,
+                                Detail.sortAddress(location?.address, location?.subDistrict, location?.district, location?.province),
+                                result.information?.detail ?: "",
                                 checkTelephone(result.contact),
                                 checkUrl(result.contact),
                                 sortList(result.facilities),
@@ -127,8 +127,8 @@ class PlaceDetailManager(listener: DetailLoadingListener) {
                     result?.let {
                         val location = result.location
                         val detail = Detail(result.name,
-                                Detail.sortAddress(location.address, location.subDistrict, location.district, location.province),
-                                result.information.detail,
+                                Detail.sortAddress(location?.address, location?.subDistrict, location?.district, location?.province),
+                                result.information?.detail ?: "",
                                 checkTelephone(result.contact),
                                 checkUrl(result.contact),
                                 "",
@@ -153,52 +153,41 @@ class PlaceDetailManager(listener: DetailLoadingListener) {
     }
 
     private fun checkTelephone(contact: TATPlaceContact?): String {
-        return if (contact != null) {
-            if (contact.phones != null) {
-                if (contact.phones.size > 0) {
-                    contact.phones[0]
-                } else
-                    ""
-            } else
-                ""
-        } else
-            ""
+        return contact?.phones?.getOrNull(0) ?: ""
     }
 
     private fun checkUrl(contact: TATPlaceContact?): String {
-        return if (contact != null) {
-            if (contact.urls != null) {
-                if (contact.urls.size > 0) {
-                    contact.urls[0]
-                } else
-                    ""
-            } else
-                ""
-        } else
-            ""
+        return contact?.urls?.getOrNull(0) ?: ""
     }
 
     private fun sortList(list: Array<TATItem>?): String {
-        if (list != null) {
-            if (list.size > 0) {
-                var index = 0
-                var nameList = ""
-                for (item in list) {
-                    if (index != 0) {
-                        nameList = nameList + "," + item.description
-                        index++
-                    } else {
-                        nameList = item.description
-                        index++
-                    }
-
-                }
-                return nameList
-            } else {
-                return ""
-            }
-        } else {
-            return ""
+        val member = list?.map {
+            it.description
         }
+
+        return member?.let {
+            it.joinToString(",")
+        } ?: ""
+//        if (list != null) {
+//            if (list.isNotEmpty()) {
+//                var index = 0
+//                var nameList = ""
+//                for (item in list) {
+//                    if (index != 0) {
+//                        nameList = nameList + "," + item.description
+//                        index++
+//                    } else {
+//                        nameList = item.description
+//                        index++
+//                    }
+//
+//                }
+//                return nameList
+//            } else {
+//                return ""
+//            }
+//        } else {
+//            return ""
+//        }
     }
 }

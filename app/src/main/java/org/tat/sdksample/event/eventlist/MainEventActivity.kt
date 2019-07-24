@@ -2,11 +2,11 @@ package org.tat.sdksample.event.eventlist
 
 import android.graphics.Rect
 import android.os.Bundle
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -27,7 +27,7 @@ class MainEventActivity : AppCompatActivity() {
     private val LNG = 100.55785
 
     private var swipe: SwipeRefreshLayout? = null
-    private var recycler: RecyclerView? = null
+    private var recycler: androidx.recyclerview.widget.RecyclerView? = null
     private var parameter: TATFindEventsParameter? = null
     private var tvSort: TextView? = null
     private var tvNoResult: TextView? = null
@@ -40,10 +40,10 @@ class MainEventActivity : AppCompatActivity() {
         tvSort = findViewById(R.id.tv_sort_by)
         tvNoResult = findViewById(R.id.tvEventNoresult)
         recycler = findViewById(R.id.recyclerList)
-        recycler!!.layoutManager = LinearLayoutManager(this)
+        recycler!!.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         recycler!!.addItemDecoration(
-                object : DividerItemDecoration(baseContext, LinearLayoutManager.VERTICAL) {
-                    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+                object : androidx.recyclerview.widget.DividerItemDecoration(baseContext, androidx.recyclerview.widget.LinearLayoutManager.VERTICAL) {
+                    override fun getItemOffsets(outRect: Rect, view: View, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State) {
                         val position = parent!!.getChildAdapterPosition(view!!)
                         if (position == parent.adapter!!.itemCount - 1) {
                             outRect.setEmpty()
@@ -53,7 +53,7 @@ class MainEventActivity : AppCompatActivity() {
                     }
                 }
         )
-        parameter = TATFindEventsParameter(TATLanguage.ENGLISH, TATEventSortBy.DATE)
+        parameter = TATFindEventsParameter(TATLanguage.ENGLISH)
 
         loadEvent()
 
@@ -82,14 +82,15 @@ class MainEventActivity : AppCompatActivity() {
             }
             R.id.item_time -> {
                 //Create parameter and sorting by DATE.
-                parameter = TATFindEventsParameter(TATLanguage.ENGLISH, TATEventSortBy.DATE)
+                parameter = TATFindEventsParameter(TATLanguage.ENGLISH)
                 tvSort!!.text = "Date"
                 loadEvent()
                 return true
             }
             R.id.item_distance -> {
                 //Create parameter and sorting by DISTANCE have to provide TATGeolocation also.
-                parameter = TATFindEventsParameter(TATLanguage.ENGLISH, TATGeolocation(LAT, LNG), TATEventSortBy.DISTANCE)
+                parameter = TATFindEventsParameter(TATLanguage.ENGLISH)
+                parameter?.sortByDistance(TATGeolocation(LAT, LNG))
                 tvSort!!.text = "Distance"
                 loadEvent()
                 return true

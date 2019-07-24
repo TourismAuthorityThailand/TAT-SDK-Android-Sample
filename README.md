@@ -22,7 +22,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.th.tatsdk:tatsdk:1.1.0'
+    implementation 'org.th.tatsdk:tatsdk:1.2.0'
 }
 ```
 ## How do I use TAT-SDK-Android ?
@@ -47,7 +47,7 @@ public void onCreate() {
 3. [News](/app/src/main/java/org/tat/sdksample/news/README.md)
 4. [Recommended Routes](/app/src/main/java/org/tat/sdksample/recommendedroute/README.md)
 
-<img src="SDK_Sample_Menu.png" width="30%">
+![](/SDK_Sample_Menu.png)
 
 ## Compatibility
 
@@ -61,7 +61,7 @@ public void onCreate() {
 
 ## License
 
-* Copyright © <a href="https://www.tourismthailand.org/home" target="_blank">Tourism Authority of Thailand</a>.
+* Copyright © [Tourism Authority of Thailand](https://www.tourismthailand.org/home)
 
 ## Acknowledgments
 

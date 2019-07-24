@@ -3,8 +3,8 @@ package org.tat.sdksample.recommendedroute.detail
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
-import android.support.constraint.ConstraintLayout
-import android.support.v7.widget.RecyclerView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +18,7 @@ import org.tat.sdksample.recommendedroute.map.MapActivity
 import org.th.tatsdk.common.TATRouteDay
 import org.th.tatsdk.route.TATGetRouteDetailResult
 
-class RouteDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class RouteDetailAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
 
     private var listItem: TATGetRouteDetailResult? = null
     private val CAR = "C"
@@ -31,7 +31,7 @@ class RouteDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
 
         if (getItemViewType(i) == HEADER) {
             val v = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_route_header, viewGroup, false)
@@ -48,29 +48,29 @@ class RouteDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemViewType(position: Int): Int {
         var count = 0
         val res = 9
-        for (day in listItem!!.days) {
-            if (position < day.stops.size + 1 + count) {
+        for (day in listItem?.days?: arrayOf()) {
+            if (position < day.stops?.size?:0 + 1 + count) {
                 return if (position == count) {
                     HEADER
                 } else {
                     ITEM
                 }
             } else {
-                count += day.stops.size + 1
+                count += day.stops?.size?:0 + 1
             }
         }
         return res
     }
 
-    override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
         var count = 0
         var item: TATRouteDay? = null
-        for (day in listItem!!.days) {
-            if (position < day.stops.size + 1 + count) {
+        for (day in listItem?.days?: arrayOf<TATRouteDay>()) {
+            if (position < day.stops?.size?:0 + 1 + count) {
                 item = day
                 break
             } else {
-                count += day.stops.size + 1
+                count += day.stops?.size?:0 + 1
             }
         }
 
@@ -147,15 +147,15 @@ class RouteDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             return 0
         } else {
             var stopCount = 0
-            for (day in listItem!!.days) {
-                stopCount += day.stops.size
+            for (day in listItem?.days?: arrayOf()) {
+                stopCount += day.stops?.size?:0
             }
             listItem?.days?.size ?: 0 + stopCount
             return stopCount
         }
     }
 
-    internal inner class ItemViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+    internal inner class ItemViewHolder(v: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(v) {
         var tvName: TextView
         var imvRoute: ImageView
         var tvDistance: TextView
@@ -171,7 +171,7 @@ class RouteDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    internal inner class HeaderViewHolder(v: View) : RecyclerView.ViewHolder(v) {
+    internal inner class HeaderViewHolder(v: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(v) {
         var tvHeader: TextView
         var btnGotoMap: TextView
 
@@ -181,7 +181,7 @@ class RouteDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    internal inner class NoItemViewHolder(v: View) : RecyclerView.ViewHolder(v)
+    internal inner class NoItemViewHolder(v: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(v)
 
     companion object {
         private val HEADER = 0

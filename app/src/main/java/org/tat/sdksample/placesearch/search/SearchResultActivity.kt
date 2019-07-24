@@ -3,11 +3,11 @@ package org.tat.sdksample.placesearch.search
 import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
-import android.support.v7.app.ActionBar
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
@@ -20,7 +20,7 @@ import org.tat.sdksample.recommendedroute.model.RecRoutes
 
 class SearchResultActivity : AppCompatActivity(), SearchResultClickListener {
     private var resultList: SearchResults? = null
-    private var recyclerView: RecyclerView? = null
+    private var recyclerView: androidx.recyclerview.widget.RecyclerView? = null
     private var adapter: SearchResultAdapter? = null
     private var tvNoresult: TextView? = null
 
@@ -43,8 +43,8 @@ class SearchResultActivity : AppCompatActivity(), SearchResultClickListener {
         if (resultList != null) {
             adapter!!.updateListItem(resultList!!)
             recyclerView!!.addItemDecoration(
-                    object : DividerItemDecoration(baseContext, LinearLayoutManager.VERTICAL) {
-                        override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+                    object : androidx.recyclerview.widget.DividerItemDecoration(baseContext, androidx.recyclerview.widget.LinearLayoutManager.VERTICAL) {
+                        override fun getItemOffsets(outRect: Rect, view: View, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State) {
                             val position = parent.getChildAdapterPosition(view)
                             if (position == parent.adapter!!.itemCount - 1) {
                                 outRect.setEmpty()

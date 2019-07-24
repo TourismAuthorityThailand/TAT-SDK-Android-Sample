@@ -1,7 +1,7 @@
 package org.tat.sdksample.news.detail
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.text.Html
 import android.text.Spanned
 import android.view.MenuItem
@@ -81,7 +81,7 @@ class NewsDetailActivity : AppCompatActivity() {
                 val tvDateTitle = date.findViewById<TextView>(R.id.tv_detail_title)
                 tvDateTitle.text = "Publish date"
                 val tvDateContent = date.findViewById<TextView>(R.id.tv_detail_content)
-                setTextIfNotNullOrEmpty(result.publishedDate.time.toString(), tvDateContent)
+                setTextIfNotNullOrEmpty(result.publishedDate?.time.toString(), tvDateContent)
 
                 val tvLocationTitle = address.findViewById<TextView>(R.id.tv_detail_title)
                 tvLocationTitle.text = "Location"
@@ -91,8 +91,8 @@ class NewsDetailActivity : AppCompatActivity() {
                 val tvUrlTitle = url.findViewById<TextView>(R.id.tv_detail_title)
                 tvUrlTitle.text = "Website"
                 val tvUrlContent = url.findViewById<TextView>(R.id.tv_detail_content)
-                if (result.urls != null && result.urls.size > 0) {
-                    setTextIfNotNullOrEmpty(result.urls[0], tvUrlContent)
+                if (result.urls != null && result.urls?.size?:0 > 0) {
+                    setTextIfNotNullOrEmpty(result.urls?.get(0), tvUrlContent)
                 } else {
                     tvUrlContent.text = "-"
                 }

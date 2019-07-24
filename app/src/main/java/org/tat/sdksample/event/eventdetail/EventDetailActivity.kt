@@ -1,7 +1,7 @@
 package org.tat.sdksample.event.eventdetail
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.text.Html
 import android.text.Spanned
 import android.view.MenuItem
@@ -75,25 +75,25 @@ class EventDetailActivity : AppCompatActivity() {
                         (province!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = "-"
                     }
 
-                    if (result.infomation != null && result.infomation.eventType.isNotEmpty()) {
-                        (eventType!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = result.infomation.eventType[0]
+                    if (result.information != null && result.information?.eventType?.isNotEmpty()==true) {
+                        (eventType!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = result.information?.eventType?.get(0)
                     } else {
                         (eventType!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = "-"
                     }
-                    if (result.infomation != null && result.infomation.htmlDetail.isNotEmpty()) {
-                        (detail!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = htmlToString(result.infomation.htmlDetail)
+                    if (result.information != null && result.information?.htmlDetail?.isNotEmpty() == true) {
+                        (detail!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = htmlToString(result.information?.htmlDetail?:"")
                     } else {
                         (detail!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = "-"
                     }
 
                     if (result.tatContact?.phones?.isNotEmpty() == true) {
-                        (tel!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = result.tatContact.phones[0]
+                        (tel!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = result.tatContact?.phones?.get(0)
                     } else {
                         (tel!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = "-"
                     }
 
                     if (result.tatContact?.urls?.isNotEmpty() == true) {
-                        (web!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = result.tatContact.urls[0]
+                        (web!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = result.tatContact?.urls?.get(0)
                     } else {
                         (web!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = "-"
                     }

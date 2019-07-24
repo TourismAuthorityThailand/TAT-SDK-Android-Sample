@@ -17,9 +17,7 @@
 
     <string name="event_and_festival">Events and Festivals</string>
     <string name="event_detail">Event detail</string>
-
     <string name="sortby_placeholder" translatable="false">SortBy :</string>
-
     <string name="news">News</string>
     <string name="new_detail">News Detail</string>
     <string name="region">Region</string>

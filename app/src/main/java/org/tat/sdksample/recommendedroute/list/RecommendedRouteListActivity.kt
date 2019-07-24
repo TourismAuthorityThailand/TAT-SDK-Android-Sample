@@ -2,11 +2,11 @@ package org.tat.sdksample.recommendedroute.list
 
 import android.graphics.Rect
 import android.os.Bundle
-import android.support.v7.app.ActionBar
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.DividerItemDecoration
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
@@ -15,7 +15,7 @@ import org.tat.sdksample.recommendedroute.model.RecRoutes
 
 class RecommendedRouteListActivity : AppCompatActivity() {
 
-    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerView: androidx.recyclerview.widget.RecyclerView
     private var recRoutes: RecRoutes? = null
     private lateinit var adapter: RecommendedRouteListAdapter
     private lateinit var noresultText: TextView
@@ -60,8 +60,8 @@ class RecommendedRouteListActivity : AppCompatActivity() {
             recyclerView.visibility = View.GONE
         }
         recyclerView.addItemDecoration(
-                object : DividerItemDecoration(baseContext, LinearLayoutManager.VERTICAL) {
-                    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+                object : androidx.recyclerview.widget.DividerItemDecoration(baseContext, androidx.recyclerview.widget.LinearLayoutManager.VERTICAL) {
+                    override fun getItemOffsets(outRect: Rect, view: View, parent: androidx.recyclerview.widget.RecyclerView, state: androidx.recyclerview.widget.RecyclerView.State) {
                         val position = parent.getChildAdapterPosition(view)
                         if (position == parent.adapter!!.itemCount - 1) {
                             outRect.setEmpty()

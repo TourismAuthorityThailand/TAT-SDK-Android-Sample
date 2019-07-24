@@ -2,7 +2,7 @@ package org.tat.sdksample.news.newslist
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ import org.tat.sdksample.R
 import org.tat.sdksample.news.detail.NewsDetailActivity
 import org.th.tatsdk.news.TATFeedNewsResult
 
-class NewsAdapter(private val results: Array<TATFeedNewsResult>) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
+class NewsAdapter(private val results: Array<TATFeedNewsResult>) : androidx.recyclerview.widget.RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     private var context: Context? = null
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): NewsViewHolder {
@@ -65,7 +65,7 @@ class NewsAdapter(private val results: Array<TATFeedNewsResult>) : RecyclerView.
         return results.size
     }
 
-    inner class NewsViewHolder(var view: View) : RecyclerView.ViewHolder(view) {
+    inner class NewsViewHolder(var view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         var image: ImageView
         var tvName: TextView
         var tvDesc: TextView

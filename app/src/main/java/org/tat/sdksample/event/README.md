@@ -1,5 +1,4 @@
-# Find Events and Get Event's detail <a name="Events and Festivals"></a>
-
+# Find Events and Get Event's detail 
 This sample demonstrates how to use `TATEvents` to find the list of events with `TATFindEventsParameter` and how to get the event's detail from `TATGetEventDetailParameter`.
 
 # Find Events
@@ -15,10 +14,11 @@ How to use `TATEvents` to find the list of events by `find` method.
 
 
 ### Feed Events
-<img src="GetEvents_android.png" width="30%">
+![](GetEvents_android.png)
 
 ### Sort options
-<img src="SortOptions_android.png" width="30%">
+![](SortOptions_android.png)
+
 
 # Get Event's detail
 How to use `TATEvents` to get the event's detail by `getDetail` method with event id.
@@ -31,4 +31,4 @@ How to use `TATEvents` to get the event's detail by `getDetail` method with even
  2. Show the result of the selected event.
 
 ### Get Event's detail
-<img src="EventDetail_android.png" width="30%">
+![](EventDetail_android.png)
