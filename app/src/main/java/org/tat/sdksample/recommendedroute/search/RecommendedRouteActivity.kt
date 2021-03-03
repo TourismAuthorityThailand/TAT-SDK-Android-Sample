@@ -89,7 +89,7 @@ class RecommendedRouteActivity : AppCompatActivity() {
 
             override fun onResponse(result: TATFindRoutesResultSet?) {
                 result?.results?.let {
-                    val res = RecRoutes(it)
+                    val res = RecRoutes().transform(it)
                     val intent = Intent(baseContext, RecommendedRouteListActivity::class.java)
                     intent.putExtra("route_list", res)
                     startActivity(intent)

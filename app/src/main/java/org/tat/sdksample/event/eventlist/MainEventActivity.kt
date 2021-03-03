@@ -2,7 +2,6 @@ package org.tat.sdksample.event.eventlist
 
 import android.graphics.Rect
 import android.os.Bundle
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +11,7 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import org.tat.sdksample.R
 import org.th.tatsdk.ServiceRequestListener
 import org.th.tatsdk.common.TATEventSortBy

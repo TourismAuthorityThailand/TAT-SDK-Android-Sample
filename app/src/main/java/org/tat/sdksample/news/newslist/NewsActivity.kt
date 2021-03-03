@@ -64,7 +64,7 @@ class NewsActivity : AppCompatActivity() {
             override fun onError(errorMessage: String?, statusCode: Int) {
                 tvNoResult.visibility = View.VISIBLE
                 recyclerView.visibility = View.GONE
-                Toast.makeText(baseContext, errorMessage, Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@NewsActivity, errorMessage, Toast.LENGTH_SHORT).show()
             }
         })
     }

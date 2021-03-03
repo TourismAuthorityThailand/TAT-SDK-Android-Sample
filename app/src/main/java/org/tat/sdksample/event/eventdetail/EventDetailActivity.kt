@@ -52,7 +52,7 @@ class EventDetailActivity : AppCompatActivity() {
         (web!!.findViewById<View>(R.id.tv_detail_title) as TextView).text = "Website"
         (detail!!.findViewById<View>(R.id.tv_detail_title) as TextView).text = "Detail"
 
-        val eventId = intent.getStringExtra("eventId")
+        val eventId = intent.getStringExtra("eventId")?:""
 
         progressBar!!.visibility = View.VISIBLE
         val parameter = TATGetEventDetailParameter(eventId, TATLanguage.ENGLISH)
@@ -76,7 +76,7 @@ class EventDetailActivity : AppCompatActivity() {
                     }
 
                     if (result.information != null && result.information?.eventType?.isNotEmpty()==true) {
-                        (eventType!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = result.information?.eventType?.get(0)
+                        (eventType!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = result.information?.eventType?.get(0)?.description
                     } else {
                         (eventType!!.findViewById<View>(R.id.tv_detail_content) as TextView).text = "-"
                     }

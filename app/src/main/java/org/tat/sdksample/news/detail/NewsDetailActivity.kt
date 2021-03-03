@@ -31,7 +31,7 @@ class NewsDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news_detail)
         if (intent != null) {
-            newsId = intent.getStringExtra("newsId")
+            newsId = intent.getStringExtra("newsId")?:""
         }
         setupToolbar()
         initInstances()

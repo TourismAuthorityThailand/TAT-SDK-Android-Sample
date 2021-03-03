@@ -24,7 +24,7 @@ class RouteDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_result)
         if (intent != null) {
-            routeId = intent.getStringExtra("rout_id")
+            routeId = intent.getStringExtra("rout_id")?:""
         }
         setupToolbar()
         initInstances()
