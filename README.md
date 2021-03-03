@@ -6,9 +6,6 @@ Welcome to the TAT-SDK-Android Sample application. This application demostrates 
 
 You can get **API Key** from [TAT Developer Guide and Console](https://developers.tourismthailand.org/console) website.
 
-## Download TAT-SDK-Android
-[ ![Download](https://api.bintray.com/packages/nostratat/maven/tat-sdk/images/download.svg) ](https://bintray.com/nostratat/maven/tat-sdk/_latestVersion)
-
 use Gradle:
 
 ```gradle
@@ -16,8 +13,8 @@ repositories {
     google()
     jcenter()
     mavenCentral()
-    maven {
-        url 'https://dl.bintray.com/nostratat/maven'
+    maven{
+        url 'https://nostra.jfrog.io/artifactory/tat-sdk/'
     }
 }
 
