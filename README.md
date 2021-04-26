@@ -14,7 +14,7 @@ repositories {
     jcenter()
     mavenCentral()
     maven{
-        url 'https://nostra.jfrog.io/artifactory/tat-sdk/'
+        url 'https://nostramap.jfrog.io/artifactory/tat-sdk/'
     }
 }
 
